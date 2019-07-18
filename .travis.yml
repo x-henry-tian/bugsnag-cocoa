@@ -13,6 +13,13 @@ matrix:
             - make test OS=9.3 TEST_CONFIGURATION=Release
           after_success:
             - bash <(curl -s 'https://codecov.io/bash') -Z -J '^Bugsnag$' -X gcov -X coveragepy -X fix -D build
+        - osx_image: xcode10.2
+          env:
+            - COCOAPODS_DISABLE_STATS=1
+          script:
+            - cd examples/swift-ios
+            - pod install
+            - xcodebuild -scheme bugsnag-example -workspace bugsnag-example.xcworkspace -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         - osx_image: xcode9.4
           env: PLATFORM=OSX
           script:
