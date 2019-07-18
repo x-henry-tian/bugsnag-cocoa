@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B0296B46CF7321F684ECACB1 /* libPods-bugsnag-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8C72BF7F8211697881F641 /* libPods-bugsnag-example.a */; };
+		152906C6AE9DBCAE43F37A46 /* libPods-KeyboardEx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1462678C79D9A55409A973B1 /* libPods-KeyboardEx.a */; };
+		59CBF28DBD00263E17B7ECA5 /* libPods-ShareEx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A991A819488D16514FFDB4 /* libPods-ShareEx.a */; };
+		8A2FF21822E06B8E002DF3A8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A2FF21722E06B8E002DF3A8 /* Media.xcassets */; };
+		8A2FF21A22E06B8E002DF3A8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2FF21922E06B8E002DF3A8 /* ActionViewController.swift */; };
+		8A2FF21D22E06B8E002DF3A8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2FF21B22E06B8E002DF3A8 /* MainInterface.storyboard */; };
+		8A2FF22122E06B8E002DF3A8 /* ActionEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A2FF21522E06B8D002DF3A8 /* ActionEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A2FF22D22E06BA0002DF3A8 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2FF22C22E06BA0002DF3A8 /* KeyboardViewController.swift */; };
+		8A2FF23122E06BA0002DF3A8 /* KeyboardEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A2FF22A22E06BA0002DF3A8 /* KeyboardEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A2FF23C22E06BB3002DF3A8 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2FF23B22E06BB3002DF3A8 /* ShareViewController.swift */; };
+		8A2FF23F22E06BB3002DF3A8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2FF23D22E06BB3002DF3A8 /* MainInterface.storyboard */; };
+		8A2FF24322E06BB3002DF3A8 /* ShareEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A2FF23922E06BB2002DF3A8 /* ShareEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AFFEE0508CFAD060AE5DD45C /* libPods-bugsnag-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB6A46581F41D63C351EF7 /* libPods-bugsnag-example.a */; };
 		D175F4BE1ACDBD81009AFFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F4BD1ACDBD81009AFFB7 /* AppDelegate.swift */; };
 		D175F4C01ACDBD81009AFFB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F4BF1ACDBD81009AFFB7 /* ViewController.swift */; };
 		D175F4C31ACDBD81009AFFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F4C11ACDBD81009AFFB7 /* Main.storyboard */; };
@@ -16,6 +27,7 @@
 		D175F4D41ACDBD81009AFFB7 /* bugsnag_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F4D31ACDBD81009AFFB7 /* bugsnag_exampleTests.swift */; };
 		D175F4DF1ACDBEFA009AFFB7 /* AnotherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F4DE1ACDBEFA009AFFB7 /* AnotherClass.swift */; };
 		D175F4E21ACDBFD9009AFFB7 /* AnObjCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D175F4E11ACDBFD9009AFFB7 /* AnObjCClass.m */; };
+		DEF1732D2529D597BD2E8B7A /* libPods-ActionEx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BB2D3830BD01AB035DE579 /* libPods-ActionEx.a */; };
 		E75E62DF1F4CE1D8000C44C0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E75E62DE1F4CE1D8000C44C0 /* libc++.tbd */; };
 		E75E62E11F4CE1DD000C44C0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E75E62E01F4CE1DD000C44C0 /* libz.tbd */; };
 		E75E62E21F4CE1E3000C44C0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E75E62DE1F4CE1D8000C44C0 /* libc++.tbd */; };
@@ -23,6 +35,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8A2FF21F22E06B8E002DF3A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D175F4B01ACDBD81009AFFB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A2FF21422E06B8D002DF3A8;
+			remoteInfo = ActionEx;
+		};
+		8A2FF22F22E06BA0002DF3A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D175F4B01ACDBD81009AFFB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A2FF22922E06BA0002DF3A8;
+			remoteInfo = KeyboardEx;
+		};
+		8A2FF24122E06BB3002DF3A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D175F4B01ACDBD81009AFFB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A2FF23822E06BB2002DF3A8;
+			remoteInfo = ShareEx;
+		};
 		D175F4CE1ACDBD81009AFFB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D175F4B01ACDBD81009AFFB7 /* Project object */;
@@ -32,10 +65,53 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8A2FF22522E06B8E002DF3A8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A2FF23122E06BA0002DF3A8 /* KeyboardEx.appex in Embed App Extensions */,
+				8A2FF22122E06B8E002DF3A8 /* ActionEx.appex in Embed App Extensions */,
+				8A2FF24322E06BB3002DF3A8 /* ShareEx.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1A8C72BF7F8211697881F641 /* libPods-bugsnag-example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bugsnag-example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C72198B7DFCD1FD2F92628E3 /* Pods-bugsnag-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bugsnag-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-bugsnag-example/Pods-bugsnag-example.release.xcconfig"; sourceTree = "<group>"; };
-		C9204A923B81A3D14457E739 /* Pods-bugsnag-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bugsnag-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bugsnag-example/Pods-bugsnag-example.debug.xcconfig"; sourceTree = "<group>"; };
+		1462678C79D9A55409A973B1 /* libPods-KeyboardEx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KeyboardEx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C287DC9ACF99DB8F3CDD91C /* Pods-ActionEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActionEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-ActionEx/Pods-ActionEx.release.xcconfig"; sourceTree = "<group>"; };
+		24A421C499343B73090E6A49 /* Pods-ActionEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActionEx.release.xcconfig"; path = "Target Support Files/Pods-ActionEx/Pods-ActionEx.release.xcconfig"; sourceTree = "<group>"; };
+		2C8BA4A3D864D125C314C950 /* Pods-bugsnag-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bugsnag-example.release.xcconfig"; path = "Target Support Files/Pods-bugsnag-example/Pods-bugsnag-example.release.xcconfig"; sourceTree = "<group>"; };
+		3E99F42A6F49C8DAC9AD45DE /* Pods-bugsnag-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bugsnag-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bugsnag-example/Pods-bugsnag-example.debug.xcconfig"; sourceTree = "<group>"; };
+		40A991A819488D16514FFDB4 /* libPods-ShareEx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareEx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		466A5ACC1F566D4C814F180D /* Pods-KeyboardEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardEx.release.xcconfig"; path = "Target Support Files/Pods-KeyboardEx/Pods-KeyboardEx.release.xcconfig"; sourceTree = "<group>"; };
+		74BB2D3830BD01AB035DE579 /* libPods-ActionEx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ActionEx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A2D1ED4705688CD30C857D /* Pods-ShareEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareEx.debug.xcconfig"; path = "Target Support Files/Pods-ShareEx/Pods-ShareEx.debug.xcconfig"; sourceTree = "<group>"; };
+		83712F1B80140D64764A0B04 /* Pods-KeyboardEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeyboardEx/Pods-KeyboardEx.debug.xcconfig"; sourceTree = "<group>"; };
+		8A2FF21522E06B8D002DF3A8 /* ActionEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActionEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2FF21722E06B8E002DF3A8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		8A2FF21922E06B8E002DF3A8 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		8A2FF21C22E06B8E002DF3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8A2FF21E22E06B8E002DF3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A2FF22A22E06BA0002DF3A8 /* KeyboardEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeyboardEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2FF22C22E06BA0002DF3A8 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		8A2FF22E22E06BA0002DF3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A2FF23922E06BB2002DF3A8 /* ShareEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2FF23B22E06BB3002DF3A8 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		8A2FF23E22E06BB3002DF3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8A2FF24022E06BB3002DF3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A2FF24822E07ABE002DF3A8 /* ExtensionBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionBridgingHeader.h; sourceTree = SOURCE_ROOT; };
+		8ECE23D282EB5BC77AC7A6C1 /* Pods-bugsnag-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bugsnag-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-bugsnag-example/Pods-bugsnag-example.release.xcconfig"; sourceTree = "<group>"; };
+		A4C260528358E00224FB86B5 /* Pods-ShareEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareEx/Pods-ShareEx.debug.xcconfig"; sourceTree = "<group>"; };
+		AA44E75B9158CA4DF2FDF743 /* Pods-ActionEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActionEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ActionEx/Pods-ActionEx.debug.xcconfig"; sourceTree = "<group>"; };
+		C0AB6A46581F41D63C351EF7 /* libPods-bugsnag-example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bugsnag-example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E2A281BF3CE1E4A3D5A6B2 /* Pods-KeyboardEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-KeyboardEx/Pods-KeyboardEx.release.xcconfig"; sourceTree = "<group>"; };
+		C6108DA6F8378E565F3396E1 /* Pods-ShareEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareEx.release.xcconfig"; path = "Target Support Files/Pods-ShareEx/Pods-ShareEx.release.xcconfig"; sourceTree = "<group>"; };
+		C9E68C7B016552BEAB5FE7B7 /* Pods-bugsnag-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bugsnag-example.debug.xcconfig"; path = "Target Support Files/Pods-bugsnag-example/Pods-bugsnag-example.debug.xcconfig"; sourceTree = "<group>"; };
 		D175F4B81ACDBD81009AFFB7 /* bugsnag-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bugsnag-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D175F4BC1ACDBD81009AFFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D175F4BD1ACDBD81009AFFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,18 +126,45 @@
 		D175F4DE1ACDBEFA009AFFB7 /* AnotherClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherClass.swift; sourceTree = "<group>"; };
 		D175F4E01ACDBFD9009AFFB7 /* AnObjCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnObjCClass.h; sourceTree = "<group>"; };
 		D175F4E11ACDBFD9009AFFB7 /* AnObjCClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnObjCClass.m; sourceTree = "<group>"; };
+		D7513F3188B5796C827EC2D4 /* Pods-KeyboardEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardEx.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardEx/Pods-KeyboardEx.debug.xcconfig"; sourceTree = "<group>"; };
 		E75E62DE1F4CE1D8000C44C0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E75E62E01F4CE1DD000C44C0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E7CC08B50E789B92356C9CBF /* Pods-ShareEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShareEx/Pods-ShareEx.release.xcconfig"; sourceTree = "<group>"; };
+		E8E51882AC08796AD5C87C5B /* Pods-ActionEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActionEx.debug.xcconfig"; path = "Target Support Files/Pods-ActionEx/Pods-ActionEx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A2FF21222E06B8D002DF3A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF1732D2529D597BD2E8B7A /* libPods-ActionEx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2FF22722E06BA0002DF3A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152906C6AE9DBCAE43F37A46 /* libPods-KeyboardEx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2FF23622E06BB2002DF3A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CBF28DBD00263E17B7ECA5 /* libPods-ShareEx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D175F4B51ACDBD81009AFFB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E75E62E11F4CE1DD000C44C0 /* libz.tbd in Frameworks */,
 				E75E62DF1F4CE1D8000C44C0 /* libc++.tbd in Frameworks */,
-				B0296B46CF7321F684ECACB1 /* libPods-bugsnag-example.a in Frameworks */,
+				AFFEE0508CFAD060AE5DD45C /* libPods-bugsnag-example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,13 +180,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E8DD6619C44560FAAA686AB /* Pods */ = {
+		0693A7728532BC840D746C43 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C9204A923B81A3D14457E739 /* Pods-bugsnag-example.debug.xcconfig */,
-				C72198B7DFCD1FD2F92628E3 /* Pods-bugsnag-example.release.xcconfig */,
+				C9E68C7B016552BEAB5FE7B7 /* Pods-bugsnag-example.debug.xcconfig */,
+				2C8BA4A3D864D125C314C950 /* Pods-bugsnag-example.release.xcconfig */,
+				E8E51882AC08796AD5C87C5B /* Pods-ActionEx.debug.xcconfig */,
+				24A421C499343B73090E6A49 /* Pods-ActionEx.release.xcconfig */,
+				D7513F3188B5796C827EC2D4 /* Pods-KeyboardEx.debug.xcconfig */,
+				466A5ACC1F566D4C814F180D /* Pods-KeyboardEx.release.xcconfig */,
+				77A2D1ED4705688CD30C857D /* Pods-ShareEx.debug.xcconfig */,
+				C6108DA6F8378E565F3396E1 /* Pods-ShareEx.release.xcconfig */,
+				AA44E75B9158CA4DF2FDF743 /* Pods-ActionEx.debug.xcconfig */,
+				1C287DC9ACF99DB8F3CDD91C /* Pods-ActionEx.release.xcconfig */,
+				83712F1B80140D64764A0B04 /* Pods-KeyboardEx.debug.xcconfig */,
+				C2E2A281BF3CE1E4A3D5A6B2 /* Pods-KeyboardEx.release.xcconfig */,
+				A4C260528358E00224FB86B5 /* Pods-ShareEx.debug.xcconfig */,
+				E7CC08B50E789B92356C9CBF /* Pods-ShareEx.release.xcconfig */,
+				3E99F42A6F49C8DAC9AD45DE /* Pods-bugsnag-example.debug.xcconfig */,
+				8ECE23D282EB5BC77AC7A6C1 /* Pods-bugsnag-example.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8A2FF21622E06B8D002DF3A8 /* ActionEx */ = {
+			isa = PBXGroup;
+			children = (
+				8A2FF21722E06B8E002DF3A8 /* Media.xcassets */,
+				8A2FF21922E06B8E002DF3A8 /* ActionViewController.swift */,
+				8A2FF21B22E06B8E002DF3A8 /* MainInterface.storyboard */,
+				8A2FF21E22E06B8E002DF3A8 /* Info.plist */,
+			);
+			path = ActionEx;
+			sourceTree = "<group>";
+		};
+		8A2FF22B22E06BA0002DF3A8 /* KeyboardEx */ = {
+			isa = PBXGroup;
+			children = (
+				8A2FF22C22E06BA0002DF3A8 /* KeyboardViewController.swift */,
+				8A2FF22E22E06BA0002DF3A8 /* Info.plist */,
+			);
+			path = KeyboardEx;
+			sourceTree = "<group>";
+		};
+		8A2FF23A22E06BB3002DF3A8 /* ShareEx */ = {
+			isa = PBXGroup;
+			children = (
+				8A2FF23B22E06BB3002DF3A8 /* ShareViewController.swift */,
+				8A2FF23D22E06BB3002DF3A8 /* MainInterface.storyboard */,
+				8A2FF24022E06BB3002DF3A8 /* Info.plist */,
+			);
+			path = ShareEx;
 			sourceTree = "<group>";
 		};
 		D175F4AF1ACDBD81009AFFB7 = {
@@ -91,9 +238,12 @@
 			children = (
 				D175F4BA1ACDBD81009AFFB7 /* bugsnag-example */,
 				D175F4D01ACDBD81009AFFB7 /* bugsnag-exampleTests */,
+				8A2FF21622E06B8D002DF3A8 /* ActionEx */,
+				8A2FF22B22E06BA0002DF3A8 /* KeyboardEx */,
+				8A2FF23A22E06BB3002DF3A8 /* ShareEx */,
 				D175F4B91ACDBD81009AFFB7 /* Products */,
-				8E8DD6619C44560FAAA686AB /* Pods */,
 				FD51012AA06FE025CCC45C93 /* Frameworks */,
+				0693A7728532BC840D746C43 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +252,9 @@
 			children = (
 				D175F4B81ACDBD81009AFFB7 /* bugsnag-example.app */,
 				D175F4CD1ACDBD81009AFFB7 /* bugsnag-exampleTests.xctest */,
+				8A2FF21522E06B8D002DF3A8 /* ActionEx.appex */,
+				8A2FF22A22E06BA0002DF3A8 /* KeyboardEx.appex */,
+				8A2FF23922E06BB2002DF3A8 /* ShareEx.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +262,7 @@
 		D175F4BA1ACDBD81009AFFB7 /* bugsnag-example */ = {
 			isa = PBXGroup;
 			children = (
+				8A2FF24822E07ABE002DF3A8 /* ExtensionBridgingHeader.h */,
 				D175F4BD1ACDBD81009AFFB7 /* AppDelegate.swift */,
 				D175F4DD1ACDBE24009AFFB7 /* bugsnag-example-Bridging-Header.h */,
 				D175F4BF1ACDBD81009AFFB7 /* ViewController.swift */,
@@ -153,7 +307,10 @@
 			children = (
 				E75E62E01F4CE1DD000C44C0 /* libz.tbd */,
 				E75E62DE1F4CE1D8000C44C0 /* libc++.tbd */,
-				1A8C72BF7F8211697881F641 /* libPods-bugsnag-example.a */,
+				C0AB6A46581F41D63C351EF7 /* libPods-bugsnag-example.a */,
+				74BB2D3830BD01AB035DE579 /* libPods-ActionEx.a */,
+				1462678C79D9A55409A973B1 /* libPods-KeyboardEx.a */,
+				40A991A819488D16514FFDB4 /* libPods-ShareEx.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,19 +318,77 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D175F4B71ACDBD81009AFFB7 /* bugsnag-example */ = {
+		8A2FF21422E06B8D002DF3A8 /* ActionEx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D175F4D71ACDBD81009AFFB7 /* Build configuration list for PBXNativeTarget "bugsnag-example" */;
+			buildConfigurationList = 8A2FF22422E06B8E002DF3A8 /* Build configuration list for PBXNativeTarget "ActionEx" */;
 			buildPhases = (
-				263E67CD095196992C59FB8C /* [CP] Check Pods Manifest.lock */,
-				D175F4B41ACDBD81009AFFB7 /* Sources */,
-				D175F4B51ACDBD81009AFFB7 /* Frameworks */,
-				D175F4B61ACDBD81009AFFB7 /* Resources */,
-				9AFEEED933DC82BFDDB374F6 /* Upload Bugsnag dSYM */,
+				1862E1693F838205D61ECEEA /* [CP] Check Pods Manifest.lock */,
+				8A2FF21122E06B8D002DF3A8 /* Sources */,
+				8A2FF21222E06B8D002DF3A8 /* Frameworks */,
+				8A2FF21322E06B8D002DF3A8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = ActionEx;
+			productName = ActionEx;
+			productReference = 8A2FF21522E06B8D002DF3A8 /* ActionEx.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8A2FF22922E06BA0002DF3A8 /* KeyboardEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A2FF23222E06BA0002DF3A8 /* Build configuration list for PBXNativeTarget "KeyboardEx" */;
+			buildPhases = (
+				6D2AACAC2DF5236B4976F0AB /* [CP] Check Pods Manifest.lock */,
+				8A2FF22622E06BA0002DF3A8 /* Sources */,
+				8A2FF22722E06BA0002DF3A8 /* Frameworks */,
+				8A2FF22822E06BA0002DF3A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardEx;
+			productName = KeyboardEx;
+			productReference = 8A2FF22A22E06BA0002DF3A8 /* KeyboardEx.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8A2FF23822E06BB2002DF3A8 /* ShareEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A2FF24422E06BB3002DF3A8 /* Build configuration list for PBXNativeTarget "ShareEx" */;
+			buildPhases = (
+				F5E5962428DA3A5659326C11 /* [CP] Check Pods Manifest.lock */,
+				8A2FF23522E06BB2002DF3A8 /* Sources */,
+				8A2FF23622E06BB2002DF3A8 /* Frameworks */,
+				8A2FF23722E06BB2002DF3A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareEx;
+			productName = ShareEx;
+			productReference = 8A2FF23922E06BB2002DF3A8 /* ShareEx.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D175F4B71ACDBD81009AFFB7 /* bugsnag-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D175F4D71ACDBD81009AFFB7 /* Build configuration list for PBXNativeTarget "bugsnag-example" */;
+			buildPhases = (
+				5682E46E93B1485ED5ED676D /* [CP] Check Pods Manifest.lock */,
+				D175F4B41ACDBD81009AFFB7 /* Sources */,
+				D175F4B51ACDBD81009AFFB7 /* Frameworks */,
+				D175F4B61ACDBD81009AFFB7 /* Resources */,
+				9AFEEED933DC82BFDDB374F6 /* Upload Bugsnag dSYM */,
+				8A2FF22522E06B8E002DF3A8 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A2FF22022E06B8E002DF3A8 /* PBXTargetDependency */,
+				8A2FF23022E06BA0002DF3A8 /* PBXTargetDependency */,
+				8A2FF24222E06BB3002DF3A8 /* PBXTargetDependency */,
 			);
 			name = "bugsnag-example";
 			productName = "bugsnag-example";
@@ -204,10 +419,25 @@
 		D175F4B01ACDBD81009AFFB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Isaac Waller";
 				TargetAttributes = {
+					8A2FF21422E06B8D002DF3A8 = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = 372ZUL2ZB7;
+						ProvisioningStyle = Automatic;
+					};
+					8A2FF22922E06BA0002DF3A8 = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = 372ZUL2ZB7;
+						ProvisioningStyle = Automatic;
+					};
+					8A2FF23822E06BB2002DF3A8 = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = 372ZUL2ZB7;
+						ProvisioningStyle = Automatic;
+					};
 					D175F4B71ACDBD81009AFFB7 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 372ZUL2ZB7;
@@ -225,6 +455,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -235,11 +466,38 @@
 			targets = (
 				D175F4B71ACDBD81009AFFB7 /* bugsnag-example */,
 				D175F4CC1ACDBD81009AFFB7 /* bugsnag-exampleTests */,
+				8A2FF21422E06B8D002DF3A8 /* ActionEx */,
+				8A2FF22922E06BA0002DF3A8 /* KeyboardEx */,
+				8A2FF23822E06BB2002DF3A8 /* ShareEx */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A2FF21322E06B8D002DF3A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2FF21822E06B8E002DF3A8 /* Media.xcassets in Resources */,
+				8A2FF21D22E06B8E002DF3A8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2FF22822E06BA0002DF3A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2FF23722E06BB2002DF3A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2FF23F22E06BB3002DF3A8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D175F4B61ACDBD81009AFFB7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,18 +518,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		263E67CD095196992C59FB8C /* [CP] Check Pods Manifest.lock */ = {
+		1862E1693F838205D61ECEEA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ActionEx-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5682E46E93B1485ED5ED676D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-bugsnag-example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D2AACAC2DF5236B4976F0AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeyboardEx-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -293,9 +599,55 @@
 			shellScript = "fork do\n  Process.setsid\n  STDIN.reopen(\"/dev/null\")\n  STDOUT.reopen(\"/dev/null\", \"a\")\n  STDERR.reopen(\"/dev/null\", \"a\")\n\n  require 'shellwords'\n\n  Dir[\"#{ENV[\"DWARF_DSYM_FOLDER_PATH\"]}/*/Contents/Resources/DWARF/*\"].each do |dsym|\n    system(\"curl -F dsym=@#{Shellwords.escape(dsym)} -F projectRoot=#{Shellwords.escape(ENV[\"PROJECT_DIR\"])} https://upload.bugsnag.com/\")\n  end\nend\n";
 			showEnvVarsInLog = 0;
 		};
+		F5E5962428DA3A5659326C11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShareEx-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A2FF21122E06B8D002DF3A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2FF21A22E06B8E002DF3A8 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2FF22622E06BA0002DF3A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2FF22D22E06BA0002DF3A8 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2FF23522E06BB2002DF3A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2FF23C22E06BB3002DF3A8 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D175F4B41ACDBD81009AFFB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +670,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8A2FF22022E06B8E002DF3A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A2FF21422E06B8D002DF3A8 /* ActionEx */;
+			targetProxy = 8A2FF21F22E06B8E002DF3A8 /* PBXContainerItemProxy */;
+		};
+		8A2FF23022E06BA0002DF3A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A2FF22922E06BA0002DF3A8 /* KeyboardEx */;
+			targetProxy = 8A2FF22F22E06BA0002DF3A8 /* PBXContainerItemProxy */;
+		};
+		8A2FF24222E06BB3002DF3A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A2FF23822E06BB2002DF3A8 /* ShareEx */;
+			targetProxy = 8A2FF24122E06BB3002DF3A8 /* PBXContainerItemProxy */;
+		};
 		D175F4CF1ACDBD81009AFFB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D175F4B71ACDBD81009AFFB7 /* bugsnag-example */;
@@ -326,6 +693,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8A2FF21B22E06B8E002DF3A8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A2FF21C22E06B8E002DF3A8 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		8A2FF23D22E06BB3002DF3A8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A2FF23E22E06BB3002DF3A8 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		D175F4C11ACDBD81009AFFB7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +728,186 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A2FF22222E06B8E002DF3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E51882AC08796AD5C87C5B /* Pods-ActionEx.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 372ZUL2ZB7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ActionEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bugsnag.bugsnag-example.ActionEx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = ExtensionBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A2FF22322E06B8E002DF3A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A421C499343B73090E6A49 /* Pods-ActionEx.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 372ZUL2ZB7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ActionEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bugsnag.bugsnag-example.ActionEx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = ExtensionBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8A2FF23322E06BA0002DF3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7513F3188B5796C827EC2D4 /* Pods-KeyboardEx.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 372ZUL2ZB7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KeyboardEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bugsnag.bugsnag-example.KeyboardEx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = ExtensionBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A2FF23422E06BA0002DF3A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 466A5ACC1F566D4C814F180D /* Pods-KeyboardEx.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 372ZUL2ZB7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KeyboardEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bugsnag.bugsnag-example.KeyboardEx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = ExtensionBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8A2FF24522E06BB3002DF3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A2D1ED4705688CD30C857D /* Pods-ShareEx.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 372ZUL2ZB7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ShareEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bugsnag.bugsnag-example.ShareEx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = ExtensionBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A2FF24622E06BB3002DF3A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6108DA6F8378E565F3396E1 /* Pods-ShareEx.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 372ZUL2ZB7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ShareEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bugsnag.bugsnag-example.ShareEx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = ExtensionBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D175F4D51ACDBD81009AFFB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -450,8 +1013,9 @@
 		};
 		D175F4D81ACDBD81009AFFB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9204A923B81A3D14457E739 /* Pods-bugsnag-example.debug.xcconfig */;
+			baseConfigurationReference = C9E68C7B016552BEAB5FE7B7 /* Pods-bugsnag-example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -469,8 +1033,9 @@
 		};
 		D175F4D91ACDBD81009AFFB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C72198B7DFCD1FD2F92628E3 /* Pods-bugsnag-example.release.xcconfig */;
+			baseConfigurationReference = 2C8BA4A3D864D125C314C950 /* Pods-bugsnag-example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -527,6 +1092,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A2FF22422E06B8E002DF3A8 /* Build configuration list for PBXNativeTarget "ActionEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A2FF22222E06B8E002DF3A8 /* Debug */,
+				8A2FF22322E06B8E002DF3A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A2FF23222E06BA0002DF3A8 /* Build configuration list for PBXNativeTarget "KeyboardEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A2FF23322E06BA0002DF3A8 /* Debug */,
+				8A2FF23422E06BA0002DF3A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A2FF24422E06BB3002DF3A8 /* Build configuration list for PBXNativeTarget "ShareEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A2FF24522E06BB3002DF3A8 /* Debug */,
+				8A2FF24622E06BB3002DF3A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D175F4B31ACDBD81009AFFB7 /* Build configuration list for PBXProject "bugsnag-example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,5 +1,7 @@
 platform :ios, '8.0'
 
-target 'bugsnag-example' do
-  pod 'Bugsnag', :path => "../.."
+['bugsnag-example', 'ActionEx', 'KeyboardEx', 'ShareEx'].each do |name|
+  target name do
+    pod 'Bugsnag', :path => "../.."
+  end
 end
