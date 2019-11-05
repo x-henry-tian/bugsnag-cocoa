@@ -55,10 +55,10 @@ void awaitBreadcrumbSync(BugsnagBreadcrumbs *crumbs) {
     [self.crumbs addBreadcrumb:@"Clear notifications"];
     awaitBreadcrumbSync(self.crumbs);
     XCTAssertEqual(self.crumbs.count, 3);
-    XCTAssertEqualObjects(self.crumbs[0].metadata[@"message"], @"Tap button");
-    XCTAssertEqualObjects(self.crumbs[1].metadata[@"message"],
+    XCTAssertEqualObjects(self.crumbs[0].name, @"Tap button");
+    XCTAssertEqualObjects(self.crumbs[1].name,
                           @"Close tutorial");
-    XCTAssertEqualObjects(self.crumbs[2].metadata[@"message"],
+    XCTAssertEqualObjects(self.crumbs[2].name,
                           @"Clear notifications");
     XCTAssertNil(self.crumbs[3]);
 }
@@ -81,8 +81,8 @@ void awaitBreadcrumbSync(BugsnagBreadcrumbs *crumbs) {
     self.crumbs.capacity = 2;
     awaitBreadcrumbSync(self.crumbs);
     XCTAssertEqual(self.crumbs.count, 2);
-    XCTAssertEqualObjects(self.crumbs[0].metadata[@"message"], @"Tap button");
-    XCTAssertEqualObjects(self.crumbs[1].metadata[@"message"],
+    XCTAssertEqualObjects(self.crumbs[0].name, @"Tap button");
+    XCTAssertEqualObjects(self.crumbs[1].name,
                           @"Close tutorial");
     XCTAssertNil(self.crumbs[2]);
 }
@@ -97,14 +97,13 @@ void awaitBreadcrumbSync(BugsnagBreadcrumbs *crumbs) {
     for (int i = 0; i < value.count; i++) {
         NSDictionary *item = value[i];
         XCTAssertTrue([item isKindOfClass:[NSDictionary class]]);
-        XCTAssertEqualObjects(item[@"name"], @"manual");
         XCTAssertEqualObjects(item[@"type"], @"manual");
         XCTAssertTrue([[formatter dateFromString:item[@"timestamp"]]
                        isKindOfClass:[NSDate class]]);
     }
-    XCTAssertEqualObjects(value[0][@"metaData"][@"message"], @"Launch app");
-    XCTAssertEqualObjects(value[1][@"metaData"][@"message"], @"Tap button");
-    XCTAssertEqualObjects(value[2][@"metaData"][@"message"], @"Close tutorial");
+    XCTAssertEqualObjects(value[0][@"name"], @"Launch app");
+    XCTAssertEqualObjects(value[1][@"name"], @"Tap button");
+    XCTAssertEqualObjects(value[2][@"name"], @"Close tutorial");
 }
 
 - (void)testStateType {
@@ -126,16 +125,13 @@ void awaitBreadcrumbSync(BugsnagBreadcrumbs *crumbs) {
     NSArray *value = [NSJSONSerialization JSONObjectWithData:crumbs options:0 error:nil];
     XCTAssertEqual(value.count, 3);
     XCTAssertEqualObjects(value[0][@"type"], @"manual");
-    XCTAssertEqualObjects(value[0][@"name"], @"manual");
-    XCTAssertEqualObjects(value[0][@"metaData"][@"message"], @"Launch app");
+    XCTAssertEqualObjects(value[0][@"name"], @"Launch app");
     XCTAssertNotNil(value[0][@"timestamp"]);
     XCTAssertEqualObjects(value[1][@"type"], @"manual");
-    XCTAssertEqualObjects(value[1][@"name"], @"manual");
-    XCTAssertEqualObjects(value[1][@"metaData"][@"message"], @"Tap button");
+    XCTAssertEqualObjects(value[1][@"name"], @"Tap button");
     XCTAssertNotNil(value[1][@"timestamp"]);
     XCTAssertEqualObjects(value[2][@"type"], @"manual");
-    XCTAssertEqualObjects(value[2][@"name"], @"manual");
-    XCTAssertEqualObjects(value[2][@"metaData"][@"message"], @"Close tutorial");
+    XCTAssertEqualObjects(value[2][@"name"], @"Close tutorial");
     XCTAssertNotNil(value[2][@"timestamp"]);
 }
 

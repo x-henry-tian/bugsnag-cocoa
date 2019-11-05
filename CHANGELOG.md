@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## TBD
+
+### Enhancements
+
+* Breadcrumb name values can now be arbitrarily long. This simplifies breadcrumb
+  creation using `Bugsnag.leaveBreadcrumb(string)` so that the value is
+  prominently displayed and is not truncated.
+
 ## 5.22.10 (2019-11-04)
 
 ### Bug fixes

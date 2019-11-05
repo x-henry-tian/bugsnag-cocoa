@@ -199,7 +199,7 @@ NSUInteger BreadcrumbsDefaultCapacity = 20;
 
 - (void)addBreadcrumb:(NSString *)breadcrumbMessage {
     [self addBreadcrumbWithBlock:^(BugsnagBreadcrumb *_Nonnull crumb) {
-      crumb.metadata = @{BSGKeyMessage : breadcrumbMessage};
+        crumb.name = breadcrumbMessage;
     }];
 }
 
