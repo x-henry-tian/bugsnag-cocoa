@@ -8,6 +8,11 @@ Changelog
 * Breadcrumb name values can now be arbitrarily long. This simplifies breadcrumb
   creation using `Bugsnag.leaveBreadcrumb(string)` so that the value is
   prominently displayed and is not truncated.
+* Breadcrumb metadata is now dropped instead of the entire breadcrumb if the
+  total size exceeds 4kb. In addition, the `name` value will be truncated to
+  respect this limit if needed. Hopefully this means more debuggable errors, as
+  more breadcrumbs are kept even if the metadata is discarded to respect payload
+  sizes.
 
 ## 5.22.10 (2019-11-04)
 

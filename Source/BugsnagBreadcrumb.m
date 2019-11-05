@@ -86,7 +86,11 @@ NSString *BSGBreadcrumbTypeValue(BSGBreadcrumbType type) {
         if (timestamp && _name.length > 0) {
             NSMutableDictionary *metadata = [NSMutableDictionary new];
             for (NSString *key in _metadata) {
-                metadata[[key copy]] = [_metadata[key] copy];
+                if ([_metadata[key] isKindOfClass:[NSString class]]
+                ||  [_metadata[key] isKindOfClass:[NSNumber class]]) {
+                    // Numbers, strings, and booleans (NSCFBoolean) can be metadata
+                    metadata[[key copy]] = [_metadata[key] copy];
+                }
             }
             return @{
                  BSGKeyName : [_name copy],
@@ -299,21 +303,41 @@ NSUInteger BreadcrumbsDefaultCapacity = 20;
       for (BugsnagBreadcrumb *crumb in self.breadcrumbs) {
           NSDictionary *objectValue = [crumb objectValue];
           NSError *error = nil;
+          NSData *(^serialize)(NSDictionary *, NSError **) = ^NSData *(NSDictionary *object, NSError **error){
+              return [NSJSONSerialization dataWithJSONObject:object options:0 error:error];
+          };
+          NSDictionary *(^trim)(NSDictionary *) = ^NSDictionary *(NSDictionary *object){
+              const int maxNameLength = 1024 * 4;
+              NSMutableDictionary *trimmedValue = [object mutableCopy];
+              [trimmedValue removeObjectForKey:BSGKeyMetaData];
+              NSString *name = trimmedValue[BSGKeyName];
+              name = name.length < maxNameLength ? name : [name substringToIndex:maxNameLength];
+              trimmedValue[BSGKeyName] = name;
+              return trimmedValue;
+          };
           @try {
               if (![NSJSONSerialization isValidJSONObject:objectValue]) {
-                  bsg_log_err(@"Unable to serialize breadcrumb: Not a valid "
-                              @"JSON object");
-                  continue;
+                  // Remove metadata in case that was the part which was invalid
+                  objectValue = trim(objectValue);
+                  if ([NSJSONSerialization isValidJSONObject:objectValue]) {
+                      bsg_log_warn(
+                          @"Dropping breadcrumb metadata (%@) which is not valid JSON",
+                          crumb.metadata);
+                  } else {
+                      bsg_log_err(@"Unable to serialize breadcrumb: Not a valid "
+                                  @"JSON object");
+                      continue;
+                  }
               }
-              NSData *data = [NSJSONSerialization dataWithJSONObject:objectValue
-                                                             options:0
-                                                               error:&error];
-              if (data.length <= BSGBreadcrumbMaxByteSize)
+              NSData *data = serialize(objectValue, &error);
+              if (data.length <= BSGBreadcrumbMaxByteSize) {
                   [contents addObject:objectValue];
-              else
+              } else {
                   bsg_log_warn(
-                      @"Dropping breadcrumb (%@) exceeding %lu byte size limit",
-                      crumb.name, (unsigned long)BSGBreadcrumbMaxByteSize);
+                      @"Dropping breadcrumb metadata (%@) exceeding %lu byte size limit",
+                      crumb.metadata, (unsigned long)BSGBreadcrumbMaxByteSize);
+                  [contents addObject:trim(objectValue)];
+              }
           } @catch (NSException *exception) {
               bsg_log_err(@"Unable to serialize breadcrumb: %@", error);
           }

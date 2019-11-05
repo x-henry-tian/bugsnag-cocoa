@@ -106,6 +106,56 @@ void awaitBreadcrumbSync(BugsnagBreadcrumbs *crumbs) {
     XCTAssertEqualObjects(value[2][@"name"], @"Close tutorial");
 }
 
+- (void)testArrayValueDropOversizedCrumbMetadata {
+    [self.crumbs addBreadcrumbWithBlock:^(BugsnagBreadcrumb *_Nonnull crumb) {
+        crumb.type = BSGBreadcrumbTypeState;
+        crumb.name = @"Rotated Menu";
+        crumb.metadata = @{@"sound" : [@"" stringByPaddingToLength:4092 withString: @"o" startingAtIndex:0]};
+    }];
+    awaitBreadcrumbSync(self.crumbs);
+    NSArray *value = [self.crumbs arrayValue];
+    XCTAssertEqual(value.count, 4);
+    XCTAssertEqualObjects(value[0][@"name"], @"Launch app");
+    XCTAssertEqualObjects(value[1][@"name"], @"Tap button");
+    XCTAssertEqualObjects(value[2][@"name"], @"Close tutorial");
+    XCTAssertEqualObjects(value[3][@"name"], @"Rotated Menu");
+    XCTAssertEqualObjects(value[3][@"type"], @"state");
+    XCTAssertNil(value[3][@"metadata"]);
+}
+
+- (void)testArrayValueInvalidJSONCrumbs {
+    [self.crumbs addBreadcrumbWithBlock:^(BugsnagBreadcrumb *_Nonnull crumb) {
+        crumb.type = BSGBreadcrumbTypeState;
+        crumb.name = @"Rotated Menu";
+        crumb.metadata = @{@"obj" : [BugsnagBreadcrumb new] };
+    }];
+    awaitBreadcrumbSync(self.crumbs);
+    NSArray *value = [self.crumbs arrayValue];
+    XCTAssertEqual(value.count, 4);
+    XCTAssertEqualObjects(value[0][@"name"], @"Launch app");
+    XCTAssertEqualObjects(value[1][@"name"], @"Tap button");
+    XCTAssertEqualObjects(value[2][@"name"], @"Close tutorial");
+    XCTAssertEqualObjects(value[3][@"name"], @"Rotated Menu");
+    XCTAssertEqualObjects(value[3][@"type"], @"state");
+    XCTAssertNil(value[3][@"metadata"]);
+}
+
+- (void)testArrayValueTrimLongName {
+    [self.crumbs addBreadcrumbWithBlock:^(BugsnagBreadcrumb *_Nonnull crumb) {
+        crumb.type = BSGBreadcrumbTypeState;
+        crumb.name = [@"" stringByPaddingToLength:5000 withString: @"foo " startingAtIndex:0];
+    }];
+    awaitBreadcrumbSync(self.crumbs);
+    NSArray *value = [self.crumbs arrayValue];
+    XCTAssertEqual(value.count, 4);
+    XCTAssertEqualObjects(value[0][@"name"], @"Launch app");
+    XCTAssertEqualObjects(value[1][@"name"], @"Tap button");
+    XCTAssertEqualObjects(value[2][@"name"], @"Close tutorial");
+    XCTAssertEqualObjects(value[3][@"name"], [@"" stringByPaddingToLength:4096 withString: @"foo " startingAtIndex:0]);
+    XCTAssertEqualObjects(value[3][@"type"], @"state");
+    XCTAssertNil(value[3][@"metadata"]);
+}
+
 - (void)testStateType {
     BugsnagBreadcrumbs *crumbs = [BugsnagBreadcrumbs new];
     [crumbs addBreadcrumbWithBlock:^(BugsnagBreadcrumb *_Nonnull crumb) {
@@ -148,21 +198,6 @@ void awaitBreadcrumbSync(BugsnagBreadcrumbs *crumbs) {
     XCTAssertEqualObjects(value[3][@"name"], @"Initiate sequence");
     XCTAssertEqualObjects(value[3][@"metaData"][@"captain"], @"Bob");
     XCTAssertNotNil(value[3][@"timestamp"]);
-}
-
-- (void)testByteSizeLimit {
-    BugsnagBreadcrumbs *crumbs = [BugsnagBreadcrumbs new];
-    [crumbs addBreadcrumbWithBlock:^(BugsnagBreadcrumb *_Nonnull crumb) {
-        crumb.type = BSGBreadcrumbTypeState;
-        crumb.name = @"Rotated Menu";
-        NSMutableDictionary *metadata = @{}.mutableCopy;
-        for (int i = 0; i < 400; i++) {
-            metadata[[NSString stringWithFormat:@"%d", i]] = @"!!";
-        }
-        crumb.metadata = metadata;
-    }];
-    NSArray *value = [crumbs arrayValue];
-    XCTAssertTrue(value.count == 0);
 }
 
 @end
