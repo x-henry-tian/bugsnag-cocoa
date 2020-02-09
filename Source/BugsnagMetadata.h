@@ -32,7 +32,15 @@
 
 - (instancetype _Nonnull)initWithDictionary:(NSMutableDictionary *_Nonnull)dict;
 
-- (NSMutableDictionary *_Nonnull)getTab:(NSString *_Nonnull)tabName;
+/**
+ * Get a named metadata section
+ *
+ * @param sectionName The name of the section
+ * @returns The mutable dictionary representing the metadata section, if it
+ *          exists, or nil if not.
+ */
+- (NSMutableDictionary *_Nullable)getMetadata:(NSString *_Nonnull)sectionName
+    NS_SWIFT_NAME(getMetadata(_:));
 
 - (void)clearMetadataInSection:(NSString *_Nonnull)section
     NS_SWIFT_NAME(clearMetadata(_:));

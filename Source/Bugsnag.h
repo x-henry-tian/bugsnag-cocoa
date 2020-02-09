@@ -267,6 +267,16 @@ static NSString *_Nonnull const BugsnagSeverityInfo = @"info";
 + (BOOL)resumeSession;
 
 /**
+* Return the metadata for a specific named section
+*
+* @param section The name of the section
+* @returns The mutable dictionary representing the metaadata section, if it
+*          exists, or nil if not.
+*/
++ (NSMutableDictionary *_Nullable)getMetadata:(NSString *_Nonnull)section
+    NS_SWIFT_NAME(getMetadata(_:));
+
+/**
  * Set the maximum number of breadcrumbs to keep and sent to Bugsnag.
  * By default, we'll keep and send the 20 most recent breadcrumb log
  * messages.

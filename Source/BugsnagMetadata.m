@@ -54,14 +54,9 @@
     }
 }
 
-- (NSMutableDictionary *)getTab:(NSString *)tabName {
+- (NSMutableDictionary *)getMetadata:(NSString *)sectionName {
     @synchronized(self) {
-        NSMutableDictionary *tab = self.dictionary[tabName];
-        if (!tab) {
-            tab = [NSMutableDictionary dictionary];
-            self.dictionary[tabName] = tab;
-        }
-        return tab;
+        return self.dictionary[sectionName];
     }
 }
 
@@ -86,15 +81,22 @@
         if (value) {
             id cleanedValue = BSGSanitizeObject(value);
             if (cleanedValue) {
-                [self getTab:tabName][attributeName] = cleanedValue;
-            } else {
+                NSDictionary *section = [self getMetadata:tabName];
+                if (!section) {
+                    [[self dictionary] setObject:[NSMutableDictionary new] forKey:tabName];
+                    section = [self getMetadata:tabName];
+                }
+                [section setValue:cleanedValue forKey:attributeName];
+            }
+            else {
                 Class klass = [value class];
                 bsg_log_err(@"Failed to add metadata: Value of class %@ is not "
                             @"JSON serializable",
                             klass);
             }
-        } else {
-            [[self getTab:tabName] removeObjectForKey:attributeName];
+        }
+        else {
+            [[self getMetadata:tabName] removeObjectForKey:attributeName];
         }
     }
     [self.delegate metadataChanged:self];
