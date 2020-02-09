@@ -62,6 +62,14 @@
     }
 }
 
+- (NSMutableDictionary *)getMetadata:(NSString *)sectionName
+                                 key:(NSString *)key
+{
+    @synchronized(self) {
+        return [self.dictionary valueForKeyPath:[NSString stringWithFormat:@"%@.%@", sectionName, key]];
+    }
+}
+
 - (void)clearMetadataInSection:(NSString *)section {
     @synchronized(self) {
         [self.dictionary removeObjectForKey:section];
@@ -89,15 +97,16 @@
 
 - (void)addAttribute:(NSString *)attributeName
            withValue:(id)value
-       toTabWithName:(NSString *)tabName {
+       toTabWithName:(NSString *)sectionName
+{
     @synchronized(self) {
         if (value) {
             id cleanedValue = BSGSanitizeObject(value);
             if (cleanedValue) {
-                NSDictionary *section = [self getMetadata:tabName];
+                NSDictionary *section = [self getMetadata:sectionName];
                 if (!section) {
-                    [[self dictionary] setObject:[NSMutableDictionary new] forKey:tabName];
-                    section = [self getMetadata:tabName];
+                    section = [NSMutableDictionary new];
+                    [[self dictionary] setObject:section forKey:sectionName];
                 }
                 [section setValue:cleanedValue forKey:attributeName];
             }
@@ -109,7 +118,7 @@
             }
         }
         else {
-            [[self getMetadata:tabName] removeObjectForKey:attributeName];
+            [[self getMetadata:sectionName] removeObjectForKey:attributeName];
         }
     }
     [self.delegate metadataChanged:self];
