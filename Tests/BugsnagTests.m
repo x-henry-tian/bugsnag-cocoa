@@ -38,7 +38,9 @@
  * deleted appropriately.
  */
 - (void)testBugsnagMetadataAddition {
-    
+
+	__block XCTestExpectation *expectation = [self expectationWithDescription:@"Localized metadata changes"];
+
     [self setUpBugsnagWillCallNotify:true];
     
     [Bugsnag addMetadataToSection:@"mySection1" key:@"aKey1" value:@"aValue1"];

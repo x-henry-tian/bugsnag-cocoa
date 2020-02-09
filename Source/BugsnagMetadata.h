@@ -62,7 +62,12 @@
  * @param key the metadata key
  */
 - (void)clearMetadataInSection:(NSString *_Nonnull)section
-                           key:(NSString *_Nonnull)key;
+                       withKey:(NSString *_Nonnull)key
+    NS_SWIFT_NAME(clearMetadata(section:key:));
+
+- (void)clearMetadataInSection:(NSString *_Nonnull)section
+                           key:(NSString *_Nonnull)key
+    NS_SWIFT_NAME(clearMetadata(_:key:));
     
 - (NSDictionary *_Nonnull)toDictionary;
 

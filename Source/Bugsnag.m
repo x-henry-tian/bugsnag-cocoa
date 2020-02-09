@@ -298,23 +298,14 @@ static NSMutableArray <id<BugsnagPlugin>> *registeredPlugins;
     }
 }
 
-+ (void)clearMetadataInSection:(NSString *)sectionName {
-    if ([self bugsnagStarted]) {
-        [self.notifier.configuration.metadata clearMetadataInSection:sectionName];
-    }
-}
-
-+ (void)clearMetadataInSection:(NSString *_Nonnull)sectionName
-                       withKey:(NSString *_Nonnull)key
-{
-    if ([self bugsnagStarted]) {
-        [self.notifier.configuration.metadata clearMetadataInSection:sectionName
-                                                             withKey:key];
-    }
-}
-
 + (NSMutableDictionary *)getMetadata:(NSString *)section {
     return [[[self configuration] metadata] getMetadata:section];
+}
+
++ (id _Nullable )getMetadata:(NSString *_Nonnull)section
+                         key:(NSString *_Nonnull)key
+{
+    return [[[self configuration] metadata] getMetadata:section key:key];
 }
 
 + (id _Nullable )getMetadata:(NSString *_Nonnull)section
