@@ -52,6 +52,16 @@
 - (id _Nullable)getMetadata:(NSString *_Nonnull)sectionName
                         key:(NSString *_Nonnull)key;
 
+/**
+* Get a keyed value from a named metadata section
+*
+* @param sectionName The name of the section
+* @param key The key
+* @returns The value if it exists, or nil if not.
+*/
+- (id _Nullable)getMetadata:(NSString *_Nonnull)sectionName
+                        key:(NSString *_Nonnull)key;
+
 - (void)clearMetadataInSection:(NSString *_Nonnull)section
     NS_SWIFT_NAME(clearMetadata(section:));
 /**
