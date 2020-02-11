@@ -47,6 +47,8 @@
     return self;
 }
 
+// MARK: - <NSMutableCopying>
+
 - (id)mutableCopyWithZone:(NSZone *)zone {
     @synchronized(self) {
         NSMutableDictionary *dict = [self.dictionary mutableCopy];

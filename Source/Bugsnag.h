@@ -300,4 +300,22 @@ static NSString *_Nonnull const BugsnagSeverityInfo = @"info";
 + (void)setBreadcrumbCapacity:(NSUInteger)capacity
         __deprecated_msg("Use [BugsnagConfiguration setMaxBreadcrumbs:] instead");
 
+/** Remove custom data from Bugsnag reports.
+ *
+ * @param sectionName        The section to clear.
+ */
++ (void)clearMetadataInSection:(NSString *_Nonnull)sectionName
+    NS_SWIFT_NAME(clearMetadata(section:));
+
+/**
+ * Remove a key/value from a named matadata section.  If either the section or the
+ * key do not exist no action will occur.
+ *
+ * @param sectionName The name of the section containing the value
+ * @param key The key to remove
+ */
++ (void)clearMetadataInSection:(NSString *_Nonnull)sectionName
+                       withKey:(NSString *_Nonnull)key
+    NS_SWIFT_NAME(clearMetadata(section:key:));
+
 @end
