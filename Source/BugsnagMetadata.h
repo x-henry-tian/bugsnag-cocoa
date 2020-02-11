@@ -53,17 +53,12 @@
                         key:(NSString *_Nonnull)key;
 
 /**
-* Get a keyed value from a named metadata section
+* Remove a named metadata section, if it exists.
 *
-* @param sectionName The name of the section
-* @param key The key
-* @returns The value if it exists, or nil if not.
+* @param sectionName The section name
 */
-- (id _Nullable)getMetadata:(NSString *_Nonnull)sectionName
-                        key:(NSString *_Nonnull)key;
+- (void)clearMetadataInSection:(NSString *_Nonnull)sectionName;
 
-- (void)clearMetadataInSection:(NSString *_Nonnull)section
-    NS_SWIFT_NAME(clearMetadata(section:));
 /**
  * Remove a specific value for a specific key in a specific metadata section.
  * If either section or key do not exist no action is taken.
@@ -72,11 +67,7 @@
  * @param key the metadata key
  */
 - (void)clearMetadataInSection:(NSString *_Nonnull)section
-                       withKey:(NSString *_Nonnull)key
-    NS_SWIFT_NAME(clearMetadata(section:key:));
-
-- (void)clearMetadataInSection:(NSString *_Nonnull)section
-                           key:(NSString *_Nonnull)key;
+                       withKey:(NSString *_Nonnull)key;
     
 - (NSDictionary *_Nonnull)toDictionary;
 

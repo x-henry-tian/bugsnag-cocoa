@@ -166,13 +166,6 @@ static NSString *_Nonnull const BugsnagSeverityInfo = @"info";
                        value:(id _Nullable)value
     NS_SWIFT_NAME(addMetadata(_:key:value:));
 
-/** Remove custom data from Bugsnag reports.
- *
- * @param tabName        The tab to clear.
- */
-+ (void)clearMetadataInSection:(NSString *_Nonnull)tabName
-    NS_SWIFT_NAME(clearMetadata(_:));
-
 // MARK: - Breadcrumbs
 
 /**
