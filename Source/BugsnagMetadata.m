@@ -47,6 +47,8 @@
     return self;
 }
 
+// MARK: - <NSMutableCopying>
+
 - (id)mutableCopyWithZone:(NSZone *)zone {
     @synchronized(self) {
         NSMutableDictionary *dict = [self.dictionary mutableCopy];
@@ -65,6 +67,17 @@
         [self.dictionary removeObjectForKey:section];
     }
 
+    [self.delegate metadataChanged:self];
+}
+
+- (void)clearMetadataInSection:(NSString *)section
+                       withKey:(NSString *)key
+{
+    @synchronized(self) {
+        if ([[[self dictionary] objectForKey:section] objectForKey:key]) {
+            [[[self dictionary] objectForKey:section] removeObjectForKey:key];
+        }
+    }
     [self.delegate metadataChanged:self];
 }
 

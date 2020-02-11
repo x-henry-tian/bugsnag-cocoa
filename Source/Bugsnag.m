@@ -196,12 +196,6 @@ static NSMutableArray <id<BugsnagPlugin>> *registeredPlugins;
     }
 }
 
-+ (void)clearMetadataInSection:(NSString *)section {
-    if ([self bugsnagStarted]) {
-        [self.notifier.configuration.metadata clearMetadataInSection:section];
-    }
-}
-
 + (BOOL)bugsnagStarted {
     if (!self.notifier.started) {
         bsg_log_err(@"Ensure you have started Bugsnag with startWithApiKey: "
@@ -301,6 +295,21 @@ static NSMutableArray <id<BugsnagPlugin>> *registeredPlugins;
     if ([self bugsnagStarted]) {
         [[BSG_KSCrash sharedInstance]
                 setWriteBinaryImagesForUserReported:writeBinaryImagesForUserReported];
+    }
+}
+
++ (void)clearMetadataInSection:(NSString *)sectionName {
+    if ([self bugsnagStarted]) {
+        [self.notifier.configuration.metadata clearMetadataInSection:sectionName];
+    }
+}
+
++ (void)clearMetadataInSection:(NSString *_Nonnull)sectionName
+                       withKey:(NSString *_Nonnull)key
+{
+    if ([self bugsnagStarted]) {
+        [self.notifier.configuration.metadata clearMetadataInSection:sectionName
+                                                             withKey:key];
     }
 }
 

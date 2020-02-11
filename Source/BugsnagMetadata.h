@@ -43,7 +43,17 @@
     NS_SWIFT_NAME(getMetadata(_:));
 
 - (void)clearMetadataInSection:(NSString *_Nonnull)section
-    NS_SWIFT_NAME(clearMetadata(_:));
+    NS_SWIFT_NAME(clearMetadata(section:));
+/**
+ * Remove a specific value for a specific key in a specific metadata section.
+ * If either section or key do not exist no action is taken.
+ *
+ * @param section The section name
+ * @param key the metadata key
+ */
+- (void)clearMetadataInSection:(NSString *_Nonnull)section
+                       withKey:(NSString *_Nonnull)key
+    NS_SWIFT_NAME(clearMetadata(section:key:));
 
 - (NSDictionary *_Nonnull)toDictionary;
 

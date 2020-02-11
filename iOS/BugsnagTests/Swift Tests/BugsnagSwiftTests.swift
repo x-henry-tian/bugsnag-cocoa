@@ -40,9 +40,9 @@ class BugsnagSwiftTests: XCTestCase {
     func testClearMetadataInSectionIsExposedToSwiftCorrectly() {
         try! Bugsnag.start(with: BugsnagConfiguration(DUMMY_APIKEY_32CHAR_1)!)
         // We don't need to check method's functioning, only that we can call it this way
-        Bugsnag.clearMetadata("testSection")
+        Bugsnag.clearMetadata(section: "testSection")
         
         let metadata = BugsnagMetadata()
-        metadata.clearMetadata("testSection2")
+        metadata.clearMetadata(section: "testSection2")
    }
 }
