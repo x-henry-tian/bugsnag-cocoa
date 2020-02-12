@@ -76,8 +76,7 @@
     NS_SWIFT_NAME(clearMetadata(section:key:));
 
 - (void)clearMetadataInSection:(NSString *_Nonnull)section
-                           key:(NSString *_Nonnull)key
-    NS_SWIFT_NAME(clearMetadata(_:key:));
+                           key:(NSString *_Nonnull)key;
     
 - (NSDictionary *_Nonnull)toDictionary;
 
