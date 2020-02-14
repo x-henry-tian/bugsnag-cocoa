@@ -49,7 +49,7 @@ Bugsnag Notifiers on other platforms.
   [#458](https://github.com/bugsnag/bugsnag-cocoa/pull/458)
   
 * Add metadata accessor methods to `BugsnagEvent`
-  []()
+[#465](https://github.com/bugsnag/bugsnag-cocoa/pull/465)
 
 ## Bug fixes
 
