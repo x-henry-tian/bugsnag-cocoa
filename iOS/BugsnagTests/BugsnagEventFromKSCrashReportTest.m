@@ -53,7 +53,7 @@
 
 - (void)testAddMetadataAddsNewTab {
     NSDictionary *metadata = @{@"color" : @"blue", @"beverage" : @"tea"};
-    [self.report addMetadata:metadata toTabWithName:@"user prefs"];
+    [self.report addMetadata:metadata toSectionNamed:@"user prefs"];
     NSDictionary *prefs = self.report.metadata[@"user prefs"];
     XCTAssertEqual(@"blue", prefs[@"color"]);
     XCTAssertEqual(@"tea", prefs[@"beverage"]);
@@ -62,9 +62,9 @@
 
 - (void)testAddMetadataMergesExistingTab {
     NSDictionary *oldMetadata = @{@"color" : @"red", @"food" : @"carrots"};
-    [self.report addMetadata:oldMetadata toTabWithName:@"user prefs"];
+    [self.report addMetadata:oldMetadata toSectionNamed:@"user prefs"];
     NSDictionary *metadata = @{@"color" : @"blue", @"beverage" : @"tea"};
-    [self.report addMetadata:metadata toTabWithName:@"user prefs"];
+    [self.report addMetadata:metadata toSectionNamed:@"user prefs"];
     NSDictionary *prefs = self.report.metadata[@"user prefs"];
     XCTAssertEqual(@"blue", prefs[@"color"]);
     XCTAssertEqual(@"tea", prefs[@"beverage"]);

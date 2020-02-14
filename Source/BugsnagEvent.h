@@ -111,15 +111,18 @@ __deprecated_msg("Use toJson: instead.");
 - (void)attachCustomStacktrace:(NSArray *_Nonnull)frames
                       withType:(NSString *_Nonnull)type;
 
+// -----------------------------------------------------------------------------
+// MARK: - Metadata
+
 /**
  * Add metadata to a report to a tab. If the tab does not exist, it will be
  * added.
  *
  * @param metadata The key/value pairs to add
- * @param tabName  The name of the report section
+ * @param sectionName  The name of the report section
  */
 - (void)addMetadata:(NSDictionary *_Nonnull)metadata
-      toTabWithName:(NSString *_Nonnull)tabName;
+     toSectionNamed:(NSString *_Nonnull)sectionName;
 
 /**
  * Add or remove a value from report metadata. If value is nil, the existing
@@ -133,6 +136,40 @@ __deprecated_msg("Use toJson: instead.");
 - (void)addAttribute:(NSString *_Nonnull)attributeName
            withValue:(id _Nullable)value
        toTabWithName:(NSString *_Nonnull)tabName;
+
+/**
+ * Return a piece of metadata in a named section if it exists, or nil.
+ *
+ * @param sectionName The name of the metadata section
+ * @param key The key
+ * @returns An arbitrary object if it exists for the key or nil.
+ */
+- (id _Nullable)getMetadataInSection:(NSString *_Nonnull)sectionName
+                             withKey:(NSString *_Nullable)key;
+
+/**
+ * Return a named metadata section if it exists, or nil.
+ *
+ * @param sectionName The name of the metadata section
+ * @returns A dictionary of metadata if the section exists, or nil.
+ */
+- (NSDictionary *_Nullable)getMetadataInSection:(NSString *_Nonnull)sectionName;
+
+/**
+ * Remove a named metadata section, if it exists.
+ *
+ * @param sectionName The name of the section to remove
+ */
+- (void)clearMetadataSection:(NSString *_Nonnull)sectionName;
+
+/**
+ * Remove a named metadata value if the key exists in the named section.
+ *
+ * @param sectionName The name of the section to remove
+ * @param key The key to remove
+ */
+- (void)clearMetadataInSection:(NSString *_Nonnull)sectionName
+                       withKey:(NSString *_Nonnull)key;
 
 /**
  *  The release stages used to notify at the time this report is captured

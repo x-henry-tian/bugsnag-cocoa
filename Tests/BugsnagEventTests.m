@@ -13,9 +13,10 @@
 #import "Bugsnag.h"
 #import "BugsnagHandledState.h"
 #import "BugsnagSession.h"
+#import "BugsnagBaseUnitTest.h"
 #import "BugsnagTestConstants.h"
 
-@interface BugsnagEventTests : XCTestCase
+@interface BugsnagEventTests : BugsnagBaseUnitTest
 @end
 
 @implementation BugsnagEventTests
@@ -447,7 +448,7 @@
 
 - (void)testReportAddMetadata {
     BugsnagEvent *event = [[BugsnagEvent alloc] initWithKSReport:@{@"user.metaData": @{@"user": @{@"id": @"user id"}}}];
-    [event addMetadata:@{@"foo": @"bar"} toTabWithName:@"user"];
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"user"];
 }
 
 
@@ -456,9 +457,8 @@
  * per-event changes to apiKey.
  */
 - (void)testApiKey {
-    NSError *error;
-    BugsnagConfiguration *config = [[BugsnagConfiguration alloc] initWithApiKey:DUMMY_APIKEY_32CHAR_1 error:&error];
-    [Bugsnag startBugsnagWithConfiguration:config];
+    
+    [self setUpBugsnagWillCallNotify:false];
 
     NSException *ex = [[NSException alloc] initWithName:@"myName" reason:@"myReason1" userInfo:nil];
     
@@ -504,4 +504,126 @@
     }];
 }
 
+// MARK: - Metadata interface
+
+- (void)testAddMetadataSectionKeyValue {
+    
+    [self setUpBugsnagWillCallNotify:true];
+    
+    BugsnagEvent *event = [[BugsnagEvent alloc] initWithKSReport:@{
+        @"user.metaData": @{
+                @"user": @{@"id": @"user id"}
+        }}];
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"section"];
+    
+    // Known
+    XCTAssertEqual([event getMetadataInSection:@"section" withKey:@"foo"], @"bar");
+    XCTAssertNotNil([event getMetadataInSection:@"section"]);
+    XCTAssertEqual([[event getMetadataInSection:@"section"] count], 1);
+    [event addMetadata:@{@"baz": @"bam"} toSectionNamed:@"section"];
+    XCTAssertEqual([[event getMetadataInSection:@"section"] count], 2);
+    XCTAssertEqual([event getMetadataInSection:@"section" withKey:@"baz"], @"bam");
+    // check type
+    NSDictionary *v = [event getMetadataInSection:@"section"];
+    XCTAssertTrue([((NSString *)[v valueForKey:@"foo"]) isEqualToString:@"bar"]);
+
+    // Unknown
+    XCTAssertNil([event getMetadataInSection:@"section" withKey:@"bob"]);
+    XCTAssertNil([event getMetadataInSection:@"anotherSection" withKey:@"baz"]);
+    XCTAssertNil([event getMetadataInSection:@"dummySection"]);
+}
+
+- (void)testAddMetadataSectionMetadataSection {
+    
+}
+
+- (void)testAddMetadataSectionKeyValueX {
+    [self setUpBugsnagWillCallNotify:false];
+}
+
+- (void)testClearMetadataSection {
+    // Setup
+    BugsnagEvent *event = [[BugsnagEvent alloc] initWithKSReport:@{
+        @"user.metaData": @{
+                @"user": @{@"id": @"user id"}
+        }}];
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"baz": @"bill"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"alice": @"bob"} toSectionNamed:@"section2"];
+    XCTAssertEqual([[event metadata] count], 3);
+    
+    // Known
+    [event clearMetadataSection:@"section1"];
+    XCTAssertEqual([[event metadata] count], 2);
+    
+    // Unknown
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"baz": @"bill"} toSectionNamed:@"section1"];
+    [event clearMetadataSection:@"section3"];
+    XCTAssertEqual([[event metadata] count], 3);
+    
+    // Empty
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"baz": @"bill"} toSectionNamed:@"section1"];
+    [event clearMetadataSection:@"section1"];
+    [event clearMetadataSection:@"section2"];
+    [event clearMetadataSection:@"section3"];
+    XCTAssertEqual([[event metadata] count], 1);
+
+    [event clearMetadataSection:@"user"];
+    XCTAssertEqual([[event metadata] count], 0);
+  
+    [event clearMetadataSection:@"section1"];
+    [event clearMetadataSection:@"section2"];
+    [event clearMetadataSection:@"section3"];
+    [event clearMetadataSection:@"user"];
+    XCTAssertEqual([[event metadata] count], 0);
+}
+
+- (void)testClearMetadataSectionWithKey {
+    // Setup
+    BugsnagEvent *event = [[BugsnagEvent alloc] initWithKSReport:@{
+        @"user.metaData": @{
+                @"user": @{@"id": @"user id"}
+        }}];
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"baz": @"bill"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"alice": @"bob"} toSectionNamed:@"section2"];
+    XCTAssertEqual([[event metadata] count], 3);
+
+    // Remove a key
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section1"]) count], 2);
+    [event clearMetadataInSection:@"section1" withKey:@"foo"];
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section1"]) count], 1);
+    
+    // Remove all keys, check section exists
+    [event clearMetadataInSection:@"section1" withKey:@"baz"];
+    XCTAssertNotNil([[event metadata] objectForKey:@"section1"]);
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section1"]) count], 0);
+}
+
+- (void)testClearMetadataSectionWithKeyNonExistentKeys {
+    // Setup
+    BugsnagEvent *event = [[BugsnagEvent alloc] initWithKSReport:@{
+        @"user.metaData": @{
+                @"user": @{@"id": @"user id"}
+        }}];
+    [event addMetadata:@{@"foo": @"bar"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"baz": @"bill"} toSectionNamed:@"section1"];
+    [event addMetadata:@{@"alice": @"bob"} toSectionNamed:@"section2"];
+    XCTAssertEqual([[event metadata] count], 3);
+
+    // Nonexistent key
+    [event clearMetadataInSection:@"section1" withKey:@"flump"];
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section1"]) count], 2);
+    [event clearMetadataInSection:@"section1" withKey:@"foo"];
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section1"]) count], 1);
+    XCTAssertEqual([[event metadata] count], 3);
+    
+    // Nonexistent section
+    [event clearMetadataInSection:@"section52" withKey:@"baz"];
+    XCTAssertEqual([[event metadata] count], 3);
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section1"]) count], 1);
+    XCTAssertEqual([((NSDictionary *)[[event metadata] objectForKey:@"section2"]) count], 1);
+}
 @end
