@@ -168,6 +168,8 @@ static NSString *_Nonnull const BugsnagSeverityInfo = @"info";
 
 // MARK: - Breadcrumbs
 
+// MARK: - Breadcrumbs
+
 /**
  * Leave a "breadcrumb" log message, representing an action that occurred
  * in your app, to aid with debugging.

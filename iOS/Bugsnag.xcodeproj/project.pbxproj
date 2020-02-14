@@ -737,6 +737,7 @@
 		8A2C8F261C6BBD2300846019 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00D7ACAC23E9C63000FBE4A7 /* BugsnagTests.m */,
 				8A2C8F8B1C6BBFDD00846019 /* BugsnagBreadcrumbsTest.m */,
 				4B3B193422CA7B0900475354 /* BugsnagCollectionsBSGDictSetSafeObjectTest.m */,
 				4B775FCE22CBDEB4004839C5 /* BugsnagCollectionsBSGDictInsertIfNotNilTest.m */,
@@ -755,6 +756,7 @@
 				E78C1EFD1FCC778700B976D3 /* BugsnagUserTest.m */,
 				F42954B7D892334E7551F0F3 /* RegisterErrorDataTest.m */,
 				8A70D9CC2253C484006B696F /* BSGOutOfMemoryWatchdogTests.m */,
+				000DF29323DB4B4900A883CE /* TestConstants.m */,
 				8A2C8F291C6BBD2300846019 /* TestsInfo.plist */,
 				000E6E9B23D84DB1009D8194 /* BugsnagTestConstants.h */,
 				000E6E9C23D8690E009D8194 /* Tests-Bridging-Header.h */,

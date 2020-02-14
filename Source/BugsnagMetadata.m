@@ -88,6 +88,18 @@
     [self.delegate metadataChanged:self];
 }
 
+- (void)clearMetadataInSection:(NSString *)section
+                           key:(NSString *_Nonnull)key
+{
+    @synchronized(self) {
+        if ([self.dictionary objectForKey:section]) {
+            [[self.dictionary objectForKey:section] removeObjectForKey:key];
+        };
+    }
+
+    [self.delegate metadataChanged:self];
+}
+
 - (NSDictionary *)toDictionary {
     @synchronized(self) {
         return [NSDictionary dictionaryWithDictionary:self.dictionary];
