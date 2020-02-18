@@ -74,6 +74,9 @@ Bugsnag Notifiers on other platforms.
   had usage aligned with this change.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
   
+* Added `Bugsnag.getMetadata(_ section: key:)`
+[#463](https://github.com/bugsnag/bugsnag-cocoa/pull/463)
+  
 
 * Add a per-Event `apiKey` property.  This defaults to the global 
   `BugsnagConfiguration` value but can be overridden in event passed to the 
