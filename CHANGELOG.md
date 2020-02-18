@@ -51,7 +51,7 @@ Bugsnag Notifiers on other platforms.
   * Added `Bugsnag.context`, replicating the `BugsnagConfiguration` property.  This is
   mutable and may be changed at any point.  Changes are propagated to the `BugsnagConfiguration`
   property.
-  []()
+  [#466](https://github.com/bugsnag/bugsnag-cocoa/pull/466)
 
 ## Bug fixes
 
