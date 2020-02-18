@@ -42,7 +42,6 @@ Bugsnag Notifiers on other platforms.
   similar functionality (e.g. `BugsnagConfiguration.getTab()` has been renamed and
   had usage aligned with this change.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
-  
 
 * Add a per-Event `apiKey` property.  This defaults to the global 
   `BugsnagConfiguration` value but can be overridden in event passed to the 
@@ -54,14 +53,12 @@ Bugsnag Notifiers on other platforms.
   similar functionality (e.g. `BugsnagConfiguration.getTab()` has been renamed and
   had usage aligned with this change.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
-  
 
 * Added `Bugsnag.getMetadata(_ section)`.  The behaviour is: calling with a valid section
   name will return the metadata for that section if it exists, or `nil` if it does not exist.  Other,
   similar functionality (e.g. `BugsnagConfiguration.getTab()` has been renamed and
   had usage aligned with this change.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
-  
 
 * Add a per-Event `apiKey` property.  This defaults to the global 
   `BugsnagConfiguration` value but can be overridden in event passed to the 
@@ -75,8 +72,7 @@ Bugsnag Notifiers on other platforms.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
   
 * Added `Bugsnag.getMetadata(_ section: key:)`
-[#463](https://github.com/bugsnag/bugsnag-cocoa/pull/463)
-  
+  [#463](https://github.com/bugsnag/bugsnag-cocoa/pull/463)
 
 * Add a per-Event `apiKey` property.  This defaults to the global 
   `BugsnagConfiguration` value but can be overridden in event passed to the 
@@ -97,19 +93,20 @@ Bugsnag Notifiers on other platforms.
   similar functionality (e.g. `BugsnagConfiguration.getTab()` has been renamed and
   had usage aligned with this change.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
-  
 
 * Added `Bugsnag.getMetadata(_ section)`.  The behaviour is: calling with a valid section
   name will return the metadata for that section if it exists, or `nil` if it does not exist.  Other,
   similar functionality (e.g. `BugsnagConfiguration.getTab()` has been renamed and
   had usage aligned with this change.
   [#459](https://github.com/bugsnag/bugsnag-cocoa/pull/459)
-  
 
 * Add a per-Event `apiKey` property.  This defaults to the global 
   `BugsnagConfiguration` value but can be overridden in event passed to the 
   `Bugsnag.notify()` callback.
   [#458](https://github.com/bugsnag/bugsnag-cocoa/pull/458)
+
+* Add a breadcrumb when network connectivity changes
+  [#448](https://github.com/bugsnag/bugsnag-cocoa/pull/448)
 
 ## Bug fixes
 
