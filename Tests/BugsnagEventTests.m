@@ -15,6 +15,7 @@
 #import "BugsnagSession.h"
 #import "BugsnagBaseUnitTest.h"
 #import "BugsnagTestConstants.h"
+#import "BugsnagTestsDummyClass.h"
 
 @interface BugsnagEventTests : BugsnagBaseUnitTest
 @end
@@ -533,12 +534,49 @@
     XCTAssertNil([event getMetadataInSection:@"dummySection"]);
 }
 
-- (void)testAddMetadataSectionMetadataSection {
+/**
+ * Invalid data should not be set.  Manually check for coverage of logging code.
+ */
+- (void)testInvalidSectionData {
+    [self setUpBugsnagWillCallNotify:true];
     
+    NSException *ex = [[NSException alloc] initWithName:@"myName" reason:@"myReason1" userInfo:nil];
+    
+    [Bugsnag notify:ex block:^(BugsnagEvent * _Nonnull event) {
+        NSDictionary *invalidDict = @{};
+        NSDictionary *validDict = @{@"myKey" : @"myValue"};
+        [event addMetadata:invalidDict toSectionNamed:@"mySection"];
+        XCTAssertEqual([[event metadata] count], 0);
+        [event addMetadata:validDict toSectionNamed:@"mySection"];
+        XCTAssertEqual([[event metadata] count], 1);
+    }];
 }
 
-- (void)testAddMetadataSectionKeyValueX {
-    [self setUpBugsnagWillCallNotify:false];
+- (void)testInvalidKeyValueData {
+    [self setUpBugsnagWillCallNotify:true];
+    
+    NSException *ex = [[NSException alloc] initWithName:@"myName" reason:@"myReason1" userInfo:nil];
+    
+    [Bugsnag notify:ex block:^(BugsnagEvent * _Nonnull event) {
+        [event addMetadataToSectionNamed:@"mySection" key:@"myKey" value:[NSNull null]];
+
+        // Invalid value still causes section to be created
+        XCTAssertEqual([[event metadata] count], 1);
+        XCTAssertNil([[event metadata] objectForKey:@"myKey"]);
+
+        [event addMetadataToSectionNamed:@"mySection" key:@"myKey" value:@"aValue"];
+        XCTAssertEqual([[event metadata] count], 1);
+        XCTAssertNotNil([[[event metadata] objectForKey:@"mySection"] objectForKey:@"myKey"]);
+        
+        BugsnagTestsDummyClass *dummy = [BugsnagTestsDummyClass new];
+        [event addMetadataToSectionNamed:@"mySection" key:@"myNewKey" value:dummy];
+        XCTAssertEqual([[event metadata] count], 1);
+        XCTAssertNil([[[event metadata] objectForKey:@"mySection"] objectForKey:@"myNewKey"]);
+        
+        [event addMetadataToSectionNamed:@"mySection" key:@"myNewKey" value:@"realValue"];
+        XCTAssertEqual([[event metadata] count], 1);
+        XCTAssertNotNil([[[event metadata] objectForKey:@"mySection"] objectForKey:@"myNewKey"]);
+    }];
 }
 
 - (void)testClearMetadataSection {
