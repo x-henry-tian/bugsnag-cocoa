@@ -107,4 +107,40 @@
     XCTAssertNil([Bugsnag getMetadata:@"noSection" key:@"notaKey1"]);
 }
 
+/**
+ * Test that the BugsnagConfiguration-mirroring Bugsnag.context is mutable
+ */
+- (void)testMutableContext {
+    __block XCTestExpectation *expectation = [self expectationWithDescription:@"Localized metadata changes"];
+    NSError *error;
+    BugsnagConfiguration *configuration = [[BugsnagConfiguration alloc] initWithApiKey:DUMMY_APIKEY_32CHAR_1 error:&error];
+    [configuration setContext:@"firstContext"];
+    [configuration addBeforeSendBlock:^bool(NSDictionary * _Nonnull rawEventData,
+                                            BugsnagEvent * _Nonnull reports)
+    {
+        return false;
+    }];
+    
+    [Bugsnag startBugsnagWithConfiguration:configuration];
+
+    NSException *exception1 = [[NSException alloc] initWithName:@"exception1" reason:@"reason1" userInfo:nil];
+
+    // Check that the context is set going in to the test and that we can change it
+    [Bugsnag notify:exception1 block:^(BugsnagEvent * _Nonnull report) {
+        XCTAssertEqual([[Bugsnag configuration] context], @"firstContext");
+        [Bugsnag setContext:@"secondContext"];
+        XCTAssertEqual([[Bugsnag configuration] context], @"secondContext");
+        [expectation fulfill];
+    }];
+
+    // Test that the context (changed inside the notify block) remains changed
+    [self waitForExpectationsWithTimeout:1.0 handler:^(NSError * _Nullable error) {
+        XCTAssertEqual([[Bugsnag configuration] context], @"secondContext");
+        
+        [Bugsnag notify:exception1 block:^(BugsnagEvent * _Nonnull report) {
+            XCTAssertEqual([[Bugsnag configuration] context], @"secondContext");
+        }];
+    }];
+}
+
 @end
