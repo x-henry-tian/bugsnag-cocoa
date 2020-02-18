@@ -110,9 +110,10 @@
     XCTAssertNotNil(section);
     XCTAssertEqual(section[@"aKey1"], @"aValue1");
     XCTAssertNil([Bugsnag getMetadata:@"anotherSection"]);
-    
-    XCTAssertTrue([[Bugsnag getMetadata:@"dummySection" key:@"aKey1"] isEqualToString:@"aValue1"]);
+
+	XCTAssertTrue([[Bugsnag getMetadata:@"dummySection" key:@"aKey1"] isEqualToString:@"aValue1"]);
     XCTAssertNil([Bugsnag getMetadata:@"noSection" key:@"notaKey1"]);
+
 }
 
 /**
