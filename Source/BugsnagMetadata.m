@@ -78,7 +78,7 @@
 }
 
 - (void)clearMetadataInSection:(NSString *)section
-                           key:(NSString *_Nonnull)key
+                       withKey:(NSString *_Nonnull)key
 {
     @synchronized(self) {
         if ([self.dictionary objectForKey:section]) {
