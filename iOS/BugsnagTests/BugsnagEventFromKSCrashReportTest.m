@@ -73,25 +73,31 @@
 }
 
 - (void)testAddAttributeAddsNewTab {
-    [self.report addAttribute:@"color"
-                    withValue:@"blue"
-                toTabWithName:@"prefs"];
+    [self.report addMetadataToSectionNamed:@"prefs"
+                                       key:@"color"
+                                     value:@"blue"];
     NSDictionary *prefs = self.report.metadata[@"prefs"];
     XCTAssertEqual(@"blue", prefs[@"color"]);
 }
 
 - (void)testAddAttributeOverridesExistingValue {
-    [self.report addAttribute:@"color" withValue:@"red" toTabWithName:@"prefs"];
-    [self.report addAttribute:@"color"
-                    withValue:@"blue"
-                toTabWithName:@"prefs"];
+    [self.report addMetadataToSectionNamed:@"prefs"
+                                       key:@"color"
+                                     value:@"red"];
+    [self.report addMetadataToSectionNamed:@"prefs"
+                                       key:@"color"
+                                     value:@"blue"];
     NSDictionary *prefs = self.report.metadata[@"prefs"];
     XCTAssertEqual(@"blue", prefs[@"color"]);
 }
 
 - (void)testAddAttributeRemovesValue {
-    [self.report addAttribute:@"color" withValue:@"red" toTabWithName:@"prefs"];
-    [self.report addAttribute:@"color" withValue:nil toTabWithName:@"prefs"];
+    [self.report addMetadataToSectionNamed:@"prefs"
+                                       key:@"color"
+                                     value:@"red"];
+    [self.report addMetadataToSectionNamed:@"prefs"
+                                       key:@"color"
+                                     value:nil];
     NSDictionary *prefs = self.report.metadata[@"prefs"];
     XCTAssertNil(prefs[@"color"]);
 }

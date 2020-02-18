@@ -443,7 +443,7 @@
 
 - (void)testReportAddAttr {
     BugsnagEvent *event = [[BugsnagEvent alloc] initWithKSReport:@{@"user.metaData": @{@"user": @{@"id": @"user id"}}}];
-    [event addAttribute:@"foo" withValue:@"bar" toTabWithName:@"user"];
+    [event addMetadataToSectionNamed:@"user" key:@"foo" value:@"bar"];
 }
 
 - (void)testReportAddMetadata {
